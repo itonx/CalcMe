@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CalcMe.Controls"
+             x:Class="CalcMe.Views.MainPage"
+             Title="{Binding Title}" Background="#F9F9F9">
+    <ContentPage.Resources>
+        <Style TargetType="Button" x:Key="NumberStyle">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style TargetType="Button" BasedOn="{StaticResource NumberStyle}" x:Key="OperationStyle">
+            <Setter Property="TextColor" Value="#0035FF"/>
+        </Style>
+        <Style TargetType="Button" BasedOn="{StaticResource NumberStyle}" x:Key="SpecialStyle">
+            <Setter Property="TextColor" Value="#00CE21"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+        <controls:CalcMeEntry  HorizontalOptions="Fill" 
+               FlowDirection="RightToLeft" HeightRequest="70"
+               Margin="10, 5, 10, 0" IsTextPredictionEnabled="False"/>
+        <Label Text="1000" HorizontalOptions="Fill"
+               HorizontalTextAlignment="End" HeightRequest="50"
+               VerticalTextAlignment="Center" Margin="10, 0"
+               FontSize="25" TextColor="Black"/>
+        <Grid Margin="10, 5, 10, 5" RowDefinitions="*,*,*,*,*,*" ColumnDefinitions="*,*,*,*" RowSpacing="5" 
+              ColumnSpacing="5" VerticalOptions="FillAndExpand">
+            <Button Text="%" Grid.Row="0" Grid.Column="0"
+                    Style="{StaticResource SpecialStyle}"/>
+            <Button Text="CE" Grid.Row="0" Grid.Column="1"
+                    Style="{StaticResource SpecialStyle}"/>
+            <Button Text="C" Grid.Row="0" Grid.Column="2"
+                    Style="{StaticResource SpecialStyle}"/>
+            <Button Text="D" Grid.Row="0" Grid.Column="3"
+                    Style="{StaticResource SpecialStyle}"/>
+
+            <Button Text="1/x" Grid.Row="1" Grid.Column="0"
+                    Style="{StaticResource OperationStyle}"/>
+            <Button Text="x^2" Grid.Row="1" Grid.Column="1"
+                    Style="{StaticResource OperationStyle}"/>
+            <Button Text="raiz" Grid.Row="1" Grid.Column="2"
+                    Style="{StaticResource OperationStyle}"/>
+            <Button Text="/" Grid.Row="1" Grid.Column="3"
+                    Style="{StaticResource OperationStyle}"/>
+
+            <Button Text="7" Grid.Row="2" Grid.Column="0"
+                    Style="{StaticResource NumberStyle}"/>
+            <Button Text="8" Grid.Row="2" Grid.Column="1"
+                    Style="{StaticResource NumberStyle}"/>
+            <Button Text="9" Grid.Row="2" Grid.Column="2"
+                    Style="{StaticResource NumberStyle}"/>
+            <Button Text="x" Grid.Row="2" Grid.Column="3"
+                    Style="{StaticResource OperationStyle}"/>
+
+            <Button Text="4" Grid.Row="3" Grid.Column="0"
+                    Style="{StaticResource NumberStyle}"/>
+            <Button Text="5" Grid.Row="3" Grid.Column="1"
+                    Style="{StaticResource NumberStyle}"/>
+            <Button Text="6" Grid.Row="3" Grid.Column="2"
+                    Style="{StaticResource NumberStyle}"/>
+            <Button Text="-" Grid.Row="3" Grid.Column="3"
+                    Style="{StaticResource OperationStyle}"/>
+
+            <Button Text="1" Grid.Row="4" Grid.Column="0"
+                    Style="{StaticResource NumberStyle}"/>
+            <Button Text="2" Grid.Row="4" Grid.Column="1"
+                    Style="{StaticResource NumberStyle}"/>
+            <Button Text="3" Grid.Row="4" Grid.Column="2"
+                    Style="{StaticResource NumberStyle}"/>
+            <Button Text="+" Grid.Row="4" Grid.Column="3"
+                    Style="{StaticResource OperationStyle}"/>
+
+            <Button Text="+-" Grid.Row="5" Grid.Column="0"
+                    Style="{StaticResource NumberStyle}"/>
+            <Button Text="0" Grid.Row="5" Grid.Column="1"
+                    Style="{StaticResource NumberStyle}"/>
+            <Button Text="." Grid.Row="5" Grid.Column="2"
+                    Style="{StaticResource NumberStyle}"/>
+            <Button Text="=" Grid.Row="5" Grid.Column="3"
+                    Style="{StaticResource OperationStyle}"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
